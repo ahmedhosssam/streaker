@@ -1,7 +1,41 @@
 import { useState } from 'react'
 
+interface User {
+    username: string,
+    streak: number,
+    problems: number,
+}
+
 function App() {
-  return (
+    const users: [User] = [
+        {
+            username: "ahmedtarek157",
+            streak: 15,
+            problems: 56
+        },
+        {
+            username: "ahmedhossvm",
+            streak: 15,
+            problems: 47
+        },
+        {
+            username: "anongoose",
+            streak: 15,
+            problems: 37
+        },
+        {
+            username: "mkmo",
+            streak: 15,
+            problems: 56
+        },
+        {
+            username: "moosayed",
+            streak: 12,
+            problems: 35
+        },
+    ]
+
+    return (
       <div className="m-7 gap-5">
 
         <div className="flex flex-row justify-center justify-between">
@@ -22,33 +56,25 @@ function App() {
               <th>Rank</th>
               <th>Username</th>
               <th>Streak</th>
+              <th>Problems</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>ahmedtarek175</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>ahmedhossvm</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>anongoose</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>mkmo</td>
-              <td>14</td>
-            </tr>
+          {users.map((user, i) => {
+              return (
+                    <tr key={i}>
+                        <td>{i+1}</td>
+                        <td>{user.username}</td>
+                        <td>{user.streak}</td>
+                        <td>{user.problems}</td>
+                    </tr>
+              )
+            }
+            )}
           </tbody>
         </table>
       </div>
-  )
+    )
 }
 
 export default App
