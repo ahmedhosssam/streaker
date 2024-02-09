@@ -9,6 +9,11 @@ interface User {
 function App() {
     const users: [User] = [
         {
+            username: "moosayed",
+            streak: 15,
+            problems: 35
+        },
+        {
             username: "ahmedtarek157",
             streak: 15,
             problems: 56,
@@ -28,14 +33,17 @@ function App() {
         {
             username: "mkmo",
             streak: 15,
-            problems: 56
-        },
-        {
-            username: "moosayed",
-            streak: 12,
-            problems: 35
+            problems: 50
         },
     ]
+    users.sort((a, b) => {
+        if (a.streak < b.streak || a.problems < b.problems) {
+            return 1;
+        } else {
+            return -1;
+        }
+        return 0;
+    })
 
     const tr = "px-6 py-2"
 
