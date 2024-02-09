@@ -16,13 +16,6 @@ interface Problem {
     date: Date,
 }
 
-/*
-export async function loader() {
-    const user = await getUser();
-    return { user };
-}
-*/
-
 function App() {
     const users: [User] = [
         {
