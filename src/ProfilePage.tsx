@@ -1,5 +1,9 @@
 import { useParams } from 'react-router-dom'
 import pic from '../assets/b1861f7b2c5b4f10.jpg'
+import anon from '../assets/anongoose.webp'
+import mosayed from '../assets/mosayed.webp'
+import tarek from '../assets/tarek.webp'
+import mkmo from '../assets/mkmo.webp'
 
 const problems: [Problem] = [
     {
@@ -32,7 +36,8 @@ const users: [User] = [
         streak: 15,
         problemsnum: 35,
         rating: 2764,
-        problems: problems
+        problems: problems,
+        picurl: mosayed
     },
     {
         id: 1,
@@ -40,7 +45,8 @@ const users: [User] = [
         streak: 15,
         problemsnum: 56,
         rating: 1683,
-        problems: problems
+        problems: problems,
+        picurl: tarek
     },
     {
         id: 2,
@@ -49,7 +55,8 @@ const users: [User] = [
         problemsnum: 47,
         rating: 812,
         rating: 6969,
-        problems: problems
+        problems: problems,
+        picurl: pic
     },
     {
         id: 3,
@@ -57,7 +64,8 @@ const users: [User] = [
         streak: 15,
         problemsnum: 37,
         rating: 1024,
-        problems: problems
+        problems: problems,
+        picurl: anon
     },
     {
         id: 4,
@@ -65,7 +73,8 @@ const users: [User] = [
         streak: 15,
         problemsnum: 50,
         rating: 792,
-        problems: problems
+        problems: problems,
+        picurl: mkmo
     },
 ]
 
@@ -78,7 +87,7 @@ const ProfilePage = () => {
         <div className="flex flex-col gap-6">
             <div className="flex flex-row flex-center mt-5 gap-4">
                 <div className="flex flex-row rounded-full ">
-                    <img src={pic} className="w-36 h-36 object-cover rounded-full"></img>
+                    <img src={user.picurl} className="w-36 h-36 object-cover rounded-full"></img>
                 </div>
 
                 <div className="flex flex-col justify-center">
