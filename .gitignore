@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # css
-./src/output.css
+src/output.css
