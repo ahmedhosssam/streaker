@@ -11,12 +11,14 @@ function App() {
         {
             username: "ahmedtarek157",
             streak: 15,
-            problems: 56
+            problems: 56,
         },
         {
+            id: 5271221,
             username: "ahmedhossvm",
             streak: 15,
-            problems: 47
+            problems: 47,
+            rating: 812,
         },
         {
             username: "anongoose",
@@ -35,6 +37,8 @@ function App() {
         },
     ]
 
+    const tr = "px-6 py-2"
+
     return (
       <div className="m-7 gap-5">
 
@@ -48,25 +52,24 @@ function App() {
             </div>
         </div>
 
-        <h3 className="mt-5">Streak Leaderboard: </h3>
-
-        <table className="border-collapse border-separate border-spacing-2 table-auto">
-          <thead>
+        <table className="text-center mt-5">
+          <caption className="bg-gray-300 px-6 py-1">Streak Leaderboard</caption>
+          <thead className="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
             <tr>
-              <th>Rank</th>
-              <th>Username</th>
-              <th>Streak</th>
-              <th>Problems</th>
+              <th scope="col" className={tr}>#</th>
+              <th scope="col" className={tr}>Username</th>
+              <th scope="col" className={tr}>Streak</th>
+              <th scope="col" className={tr}>Problems</th>
             </tr>
           </thead>
           <tbody>
           {users.map((user, i) => {
               return (
-                    <tr key={i}>
-                        <td>{i+1}</td>
-                        <td>{user.username}</td>
-                        <td>{user.streak}</td>
-                        <td>{user.problems}</td>
+                    <tr key={i} className="border-b dark:border-neutral-400">
+                        <td className={tr}>{i+1}</td>
+                        <td className={tr}>{user.username}</td>
+                        <td className={tr}>{user.streak}</td>
+                        <td className={tr}>{user.problems}</td>
                     </tr>
               )
             }
