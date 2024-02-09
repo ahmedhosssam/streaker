@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Header from './Header.tsx'
 
 interface User {
     username: string,
@@ -7,6 +8,7 @@ interface User {
 }
 
 function App() {
+    const tr = "px-6 py-2"
     const users: [User] = [
         {
             username: "moosayed",
@@ -45,23 +47,12 @@ function App() {
         return 0;
     })
 
-    const tr = "px-6 py-2"
 
     return (
         <div className="m-7 gap-5">
-
-            <div className="flex flex-row justify-center justify-between">
-                <div className="text-4xl">
-                    Streaker
-                </div>
-                <div className="flex flex-row justify-center justify-between gap-4">
-                    <div>ahmedhossvm</div>
-                    <div>Logout</div>
-                </div>
-            </div>
-
+        <Header/>
         <table className="text-center mt-5">
-            <caption className="bg-gray-300 px-6 py-1">Streak Leaderboard</caption>
+            <caption className="bg-gray-200 px-6 py-1">Streak Leaderboard</caption>
             <thead className="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
                 <tr>
                     <th scope="col" className={tr}>#</th>
@@ -72,9 +63,10 @@ function App() {
             </thead>
             <tbody>
             {users.map((user, i) => {
+                const color:boolean = i%2 == 0
                 return (
-                      <tr key={i} className="border-b dark:border-neutral-400">
-                          <td className={tr}>{i+1}</td>
+                      <tr key={i} className="border-b dark:border-neutral-400" className={color ? "bg-gray-100" : ""}>
+                          <td className={tr} className="">{i+1}</td>
                           <td className={tr}>{user.username}</td>
                           <td className={tr}>{user.streak}</td>
                           <td className={tr}>{user.problems}</td>
